@@ -228,7 +228,7 @@ The project uses environment variables for configuration:
 
 ```env
 PORT=5000
-MONGO_URI=mongodb://mongo:27017/student_accomodation_system_hd
+MONGO_URI=mongodb://mongo:27017/hosteldb
 JWT_SECRET=replace-with-a-long-random-secret
 ```
 
