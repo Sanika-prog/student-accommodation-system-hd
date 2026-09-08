@@ -335,35 +335,7 @@ approved
 
 The room occupancy should also be updated after the approval.
 
-## Testing from a Clean State
 
-Before submission, I recommend testing the project from a clean Docker environment.
-
-Stop the containers and remove the existing Docker volumes:
-
-```bash
-docker-compose down -v
-```
-
-Then rebuild and start the application:
-
-```bash
-docker-compose up --build
-```
-
-After starting the application, check:
-
-```text
-http://localhost:5000
-```
-
-and:
-
-```text
-http://localhost:5000/api/student
-```
-
-The main authentication, room and application flows should then be tested again.
 
 ## Environment Variables
 
@@ -379,6 +351,3 @@ JWT_SECRET=replace-with-a-long-random-secret
 
 The `.env` file is not committed to the repository. The `.env.example` file is provided as a template.
 
-## Notes
-
-This project was developed as an individual full-stack application. The backend follows a simple separation between routes, controllers, models and middleware, while the frontend communicates with the Express API using JavaScript.
