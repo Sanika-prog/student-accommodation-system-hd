@@ -221,18 +221,22 @@ The required student endpoint was also checked at:
 ```text
 http://localhost:5000/api/student
 ```
-
 ## Environment Variables
 
-The project uses environment variables for configuration:
+**No setup is needed to run this project.** `docker-compose.yml` already supplies every
+required value, so you need not create a `.env` file or install MongoDB.
 
-```env
-PORT=5000
-MONGO_URI=mongodb://mongo:27017/hosteldb
-JWT_SECRET=replace-with-a-long-random-secret
-```
+| Variable     | Value used by Docker Compose                              | Purpose                          |
+| ------------ | --------------------------------------------------------- | -------------------------------- |
+| `PORT`       | `5000`                                                    | Port the app listens on          |
+| `MONGO_URI`  | `mongodb://mongo:27017/student_accomodation_system_hd`    | Connection to the MongoDB container |
+| `JWT_SECRET` | `replace-with-a-long-random-secret`                       | Signs login tokens               |
 
-The `.env.example` file is provided as a template. The actual `.env` file is excluded from the repository to avoid exposing sensitive configuration.
+`JWT_SECRET` is a **demo placeholder**, not a real secret, so the project runs out of the box.
+For any real deployment, replace it with a long random value.
+
+The `.env.example` file is a template for running the app outside Docker. A real `.env` file
+is excluded from the repository by `.gitignore` so that secrets are never committed.
 
 ## Stopping the Application
 
